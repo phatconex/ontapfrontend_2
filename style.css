@@ -1,0 +1,206 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+body {
+    font-family: Dosis, sans-serif;
+    font-weight: 400;
+    background-color: #f7e7dc;
+}
+.pet {
+    /* background-color: #fff3ea; */
+    padding: 30px 100px;
+}
+.pet .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.pet .header .logo img {
+    width: 150px;
+}
+.pet .header .icon {
+    font-size: 26px;
+}
+.pet .header .icon i:last-child {
+    display: none;
+}
+.pet .header .icon.active i:last-child {
+    display: block;
+}
+.pet .header .icon.active i:first-child {
+    display: none;
+}
+.pet .header .menu ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+.pet .header .menu ul li a {
+    font-size: 20px;
+    font-weight: 500;
+}
+.pet .header .menu ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: #f04336;
+    border-radius: 20px;
+    transform: translateY(9px);
+    transition: 0.5s;
+}
+.pet .header .menu ul li a:hover::after {
+    width: 100%;
+}
+.pet .header .btn {
+    background-color: #f04336;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 7px 20px 10px;
+    clip-path: polygon(5% 0, 100% 0, 100% 50%, 95% 100%, 0 100%, 0% 50%);
+    color: #fff;
+}
+.pet .header .sidebar {
+    position: absolute;
+    left: -200px;
+    top: 0;
+    width: 200px;
+    background-color: rgb(240 67 54);
+    height: 100vh;
+    z-index: 999;
+    padding: 30px;
+    transition: 0.5s;
+}
+.pet .header .sidebar.active {
+    left: 0;
+}
+.pet .header .sidebar ul {
+    list-style: none;
+}
+.pet .header .sidebar ul li {
+    margin-bottom: 20px;
+}
+.pet .header .sidebar ul li a {
+    color: #fff;
+    font-weight: bold;
+}
+.pet .list {
+    margin-top: 100px;
+}
+.pet .list .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.pet .list .card {
+    width: calc(25% - 30px);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.pet .list .card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    background-color: #f04336;
+    left: 0;
+    bottom: 0;
+    border-radius: 30px;
+}
+.pet .list .card .thumb {
+    position: relative;
+    padding: 10px;
+    width: 80%;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    background-color: rgb(247 247 245);
+    margin: 0 auto 30px;
+}
+.pet .list .card h3 {
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 24px;
+    color: #fff;
+}
+.pet .list .card p {
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 20px;
+    color: yellow;
+    font-weight: bold;
+}
+.pet .list .card ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+.pet .list .card ul li {
+    border: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+}
+.pet .list .card ul li a {
+    color: #fff;
+}
+@media (min-width: 992px) {
+    .pet .header .icon {
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+    .pet {
+        padding: 20px 10px;
+    }
+    .pet .header .menu {
+        display: none;
+    }
+    .pet .list .card {
+        width: calc(50% - 30px);
+    }
+    .pet .content .left {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+        padding-right: 0;
+    }
+    .pet .content .right {
+        width: 100%;
+    }
+    .pet .list {
+        justify-content: center;
+    }
+}
+@media (max-width: 575px) {
+    .pet .list li {
+        padding: 10px;
+        width: 20%;
+    }
+    .pet .list .card {
+        width: 100%;
+    }
+    .pet .header .logo img {
+        width: 120px;
+    }
+    .pet .header .btn {
+        font-size: 16px;
+        padding: 5px 15px 8px;
+    }
+}
